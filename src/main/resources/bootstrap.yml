@@ -1,0 +1,28 @@
+#spring.profiles.active = dev
+#spring.cloud.config.uri = http://localhost:8095
+#management.endpoints.web.exposure.incude=*
+
+server:
+  port: 8097
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8096/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: gateway-server-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8095
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
